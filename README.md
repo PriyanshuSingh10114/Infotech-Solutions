@@ -5,11 +5,12 @@ A fully responsive and pixel-perfect static landing page developed from a Figma 
 ## Live Demo
 
 🌐 Live Website:  
-Add your deployed Render/Vercel/Netlify link here
+https://infotech-solutions.onrender.com
 
 ## GitHub Repository
 
 📁 Repository:  
+
 [Infotech-Solutions Repository](https://github.com/PriyanshuSingh10114/Infotech-Solutions?utm_source=chatgpt.com)
 
 ---
