@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Compliance Landing Page</title>
 
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- ================= NAVBAR ================= -->
@@ -31,19 +33,23 @@
         <a href="#">Contact</a>
       </nav>
 
-      <button class="contact-btn desktop-btn">
-        <img src="assets/Contact-icon.png" alt="icon">
-        Contact Us
-      </button>
+      <div class="nav-right">
+        <button class="contact-btn desktop-btn">
+          <img src="assets/Contact-icon.png" alt="icon">
+          Contact Us
+        </button>
 
-      <div class="menu-icon" id="menuIcon">
-        <img src="assets/Menu.png" alt="menu">
+        <div class="menu-icon" id="menuIcon">
+          <img src="assets/Menu.png" alt="menu">
+        </div>
       </div>
 
     </div>
 
 
     <!-- ============ MOBILE MENU ============ -->
+
+    <div class="overlay" id="overlay"></div>
 
     <div class="mobile-menu" id="mobileMenu">
 
@@ -52,7 +58,7 @@
         <span id="closeMenu">✕</span>
       </div>
 
-      <a href="#">
+      <a href="#" class="active">
         <img src="assets/Home.png" alt="">
         Home
       </a>
@@ -100,15 +106,15 @@
       <div class="hero-left">
 
         <h1 class="hero-heading">
-        Simplifying <br>
+          Simplifying <br>
 
-        <span class="compliance-text">
+          <span class="compliance-text">
             Compliance
             <img src="assets/underline-Vector.png" alt="underline">
-        </span>
+          </span>
 
-        For <br>
-        Research Analysts
+          For <br>
+          Research Analysts
         </h1>
 
         <p>
@@ -163,83 +169,69 @@
 
     <div class="container second-wrapper">
 
-      <!-- LEFT -->
+      <div class="column-left">
+        <div class="second-heading">
+          <h2>
+            Why <span>Compliance Matters</span><br>
+            For Research Analysts
+          </h2>
+          <img src="assets/Vector2.png" alt="vector" class="vector-two">
+        </div>
 
-      <div class="second-left">
-
-        <h2>
-          Why <span>Compliance Matters</span><br>
-          For Research Analysts
-        </h2>
-
-        <img src="assets/Vector2.png" alt="vector" class="vector-two">
-
-        <img src="assets/Section2-Image.png" alt="section-image" class="section-image">
-
+        <div class="second-image">
+          <img src="assets/Section2-Image.png" alt="section-image" class="section-image">
+        </div>
       </div>
 
-
-      <!-- RIGHT -->
-
-      <div class="second-right">
-
-        <p class="section-description">
-          In Today's Regulatory Environment, Even A Small Oversight Can Lead To
-          Penalties, Reputational Risks, And Loss Of Client Trust. We Help Research
-          Analysts And Firms Navigate Complex Compliance Requirements So They
-          Can Focus On Delivering High-Quality Research Without Worry.
-        </p>
-
-
-        <div class="info-card">
-
-          <div class="card-icon">
-            <img src="assets/Regulatory-Clarity.png" alt="icon">
-          </div>
-
-          <div>
-            <h3>Regulatory Clarity</h3>
-            <p>
-              We Decode Complex Compliance Rules Into Simple,
-              Actionable Steps.
-            </p>
-          </div>
-
+      <div class="column-right">
+        <div class="second-paragraph">
+          <p class="section-description">
+            In Today's Regulatory Environment, Even A Small Oversight Can Lead To
+            Penalties, Reputational Risks, And Loss Of Client Trust. We Help Research
+            Analysts And Firms Navigate Complex Compliance Requirements So They
+            Can Focus On Delivering High-Quality Research Without Worry.
+          </p>
         </div>
 
-
-        <div class="info-card">
-
-          <div class="card-icon">
-            <img src="assets/Hassle-Free-Filings-Clarity.png" alt="icon">
+        <div class="second-cards">
+          <div class="info-card">
+            <div class="card-icon">
+              <img src="assets/Regulatory-Clarity.png" alt="icon">
+            </div>
+            <div>
+              <h3>Regulatory Clarity</h3>
+              <p>
+                We Decode Complex Compliance Rules Into Simple,
+                Actionable Steps.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h3>Hassle-Free Filings Clarity</h3>
-            <p>
-              From Registration To Ongoing Reporting —We Manage It End-To-End.
-            </p>
+          <div class="info-card">
+            <div class="card-icon">
+              <img src="assets/Hassle-Free-Filings-Clarity.png" alt="icon">
+            </div>
+            <div>
+              <h3>Hassle-Free Filings Clarity</h3>
+              <p>
+                From Registration To Ongoing Reporting—We Manage It End-To-End.
+              </p>
+            </div>
           </div>
 
+          <div class="info-card">
+            <div class="card-icon">
+              <img src="assets/Risk-Protection.png" alt="icon">
+            </div>
+            <div>
+              <h3>Risk Protection</h3>
+              <p>
+                Stay Ahead Of Audits, Inspections, And Compliance Gaps
+                With Proactive Support.
+              </p>
+            </div>
+          </div>
         </div>
-
-
-        <div class="info-card">
-
-          <div class="card-icon">
-            <img src="assets/Risk-Protection.png" alt="icon">
-          </div>
-
-          <div>
-            <h3>Risk Protection</h3>
-            <p>
-              Stay Ahead Of Audits, Inspections, And Compliance Gaps
-              With Proactive Support.
-            </p>
-          </div>
-
-        </div>
-
       </div>
     </div>
     <img src="assets/Vector1.png" alt="vector" class="vector-two-down">
@@ -254,17 +246,25 @@
     const menuIcon = document.getElementById("menuIcon");
     const mobileMenu = document.getElementById("mobileMenu");
     const closeMenu = document.getElementById("closeMenu");
+    const overlay = document.getElementById("overlay");
 
     menuIcon.addEventListener("click", () => {
       mobileMenu.classList.add("showMenu");
+      overlay.classList.add("show");
     });
 
     closeMenu.addEventListener("click", () => {
       mobileMenu.classList.remove("showMenu");
+      overlay.classList.remove("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      mobileMenu.classList.remove("showMenu");
+      overlay.classList.remove("show");
     });
 
   </script>
 
 </body>
-</html>
 
+</html>

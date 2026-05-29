@@ -74,8 +74,7 @@ img {
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -118,7 +117,7 @@ img {
 .contact-btn {
   background: #5867f2;
   color: white;
-  border: none;
+  border: 2px solid #5867f2;
   padding: 14px 24px;
   border-radius: 10px;
   display: flex;
@@ -127,15 +126,27 @@ img {
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .contact-btn:hover {
   transform: translateY(-2px);
+  background: transparent;
+  color: #5867f2;
+}
+
+.contact-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(34%) sepia(85%) saturate(3065%) hue-rotate(222deg) brightness(101%) contrast(92%);
 }
 
 .contact-btn img {
   width: 18px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .menu-icon {
@@ -149,11 +160,29 @@ img {
 
 /* ================= MOBILE MENU ================= */
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 .mobile-menu {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 280px;
+  width: 320px;
   height: 100vh;
   background: white;
   z-index: 999;
@@ -178,9 +207,10 @@ img {
 }
 
 .mobile-top span {
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   color: #5867f2;
+  font-weight: 400;
 }
 
 .mobile-menu a {
@@ -192,6 +222,17 @@ img {
   margin-bottom: 28px;
   font-size: 15px;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a.active,
+.mobile-menu a:hover {
+  color: #5867f2;
+}
+
+.mobile-menu a.active img,
+.mobile-menu a:hover img {
+  filter: brightness(0) saturate(100%) invert(34%) sepia(85%) saturate(3065%) hue-rotate(222deg) brightness(101%) contrast(92%);
 }
 
 .mobile-menu a img {
@@ -315,7 +356,7 @@ img {
 
 .primary-btn {
   background: #5867f2;
-  border: none;
+  border: 2px solid #5867f2;
   color: white;
 }
 
@@ -325,8 +366,15 @@ img {
   color: #5867f2;
 }
 
-.primary-btn:hover,
+.primary-btn:hover {
+  background: transparent;
+  color: #5867f2;
+  transform: translateY(-2px);
+}
+
 .secondary-btn:hover {
+  background: #5867f2;
+  color: white;
   transform: translateY(-2px);
 }
 
@@ -342,42 +390,41 @@ img {
 }
 
 .second-wrapper {
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
 }
-
-.second-right{
-    width:48%;
+.column-left, .column-right {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
 }
+.second-heading { position: relative; }
+.second-image { text-align: center; }
 
-.second-left {
-  position: relative;
-}
-
-.second-left h2 {
+.second-heading h2 {
   font-size: var(--h2-fs);
   line-height: var(--h2-lh);
   font-weight: var(--h2-fw);
   color: #111111;
-  margin-bottom: 140px;
+  margin-bottom: 65px;
 }
 
-.second-left h2 span {
+.second-heading h2 span {
   color: #5867f2;
 }
 
 .vector-two {
   position: absolute;
-  top: 80px;
-  right: 110px;
+  top: 70px;
+  right: 20px;
   width: 40px;
-  bottom: 40px;
 }
 
 .section-image {
-  width: 90%;
+  width: 100%;
+  max-width: 410px;
+  display: block;
 }
 
 .section-description{
@@ -386,22 +433,27 @@ img {
     line-height: var(--body-regular-lh);
     color:#111111;
     max-width:720px;
-    margin-bottom:45px;
+    margin-bottom:30px;
 }
 
 .info-card {
   display: flex;
   gap: 20px;
-  background: #F7F8FC;
+  background: #ffffff;
   padding: 28px;
   border-radius: 12px;
   border: 1px solid #E3E7FF;
   margin-bottom: 24px;
-  transition: 0.3s ease;
+  transition: 0.3s ease, border-color 0.3s ease;
+}
+
+.info-card:last-child {
+  margin-bottom: 0;
 }
 
 .info-card:hover {
   transform: translateY(-4px);
+  border-color: #5867f2;
 }
 
 .card-icon img {
@@ -414,6 +466,11 @@ img {
   line-height: var(--large-title-lh);
   color: black;
   margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.info-card:hover h3 {
+  color: #5867f2;
 }
 
 .info-card p {
@@ -479,8 +536,7 @@ img {
 
     /* navbar */
 
-    .nav-links,
-    .desktop-btn{
+    .nav-links{
         display:none;
     }
 
@@ -489,8 +545,8 @@ img {
     }
 
     /* hero section */
-
     .hero-wrapper{
+        display: flex;
         flex-direction:column;
         text-align:center;
         gap:50px;
@@ -506,8 +562,15 @@ img {
         max-width:100%;
     }
 
+    .feature-list {
+        max-width: 420px;
+        margin: 0 auto 38px auto;
+        align-items: flex-start;
+    }
+
     .feature-item{
-        justify-content:center;
+        justify-content:flex-start;
+        text-align:left;
     }
 
     .hero-buttons{
@@ -521,35 +584,28 @@ img {
     }
 
     /* second section */
-
     .second-wrapper{
+        display: flex;
         flex-direction:column;
-        gap:50px;
+        gap:40px;
     }
 
-    .second-left,
-    .second-right{
-        width:100%;
+    .column-left, .column-right {
+        display: contents;
     }
+    
+    .second-heading { order: 1; text-align: center; }
+    .second-paragraph { order: 2; text-align: center; }
+    .second-image { order: 3; width: 100%; max-width: 500px; margin: auto; }
+    .second-cards { order: 4; }
 
-    .second-left{
-        text-align:center;
-    }
-
-    .second-left h2{
-        margin-bottom:50px;
-    }
-
-    .section-image{
-        width:100%;
-        max-width:500px;
-        margin:auto;
+    .second-heading h2 {
+        margin-bottom: 20px;
     }
 
     .section-description{
-        text-align:center;
-        max-width:100%;
-        margin-bottom:35px;
+        margin: 0 auto 35px auto;
+        max-width: 100%;
     }
 
     .vector-two,
@@ -570,6 +626,10 @@ img {
 
     .header{
         padding:18px 0;
+    }
+
+    .desktop-btn {
+        display:none;
     }
 
     .logo img{
@@ -610,7 +670,9 @@ img {
     }
 
     .hero-buttons{
+        display: flex;
         flex-direction:column;
+        align-items: center;
         gap:14px;
         margin-top:30px;
     }
@@ -633,7 +695,7 @@ img {
         padding-bottom:70px;
     }
 
-    .second-left h2{
+    .second-heading h2{
         margin-bottom:35px;
     }
 
